@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
 import FiltroCard from '../../components/FiltroCard'
 import { useNavigate } from 'react-router-dom'
 
@@ -17,8 +18,15 @@ const BarraLateral = ({mostrarFiltros}: Props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch() 
   const {termo} = useSelector((state: RootReducer) => state.filtro)  
+  const [aberto, setAberto] = useState(false)
   return (
-    <S.Aside>
+    <>
+    <S.Hamburguer aria-label="Abrir menu" $aberto={aberto} onClick={() => setAberto(!aberto)}>
+      <span />
+      <span />
+      <span />
+    </S.Hamburguer>
+    <S.Aside $aberto={aberto}>
       <div>
         {mostrarFiltros ? (
           <>
@@ -67,6 +75,7 @@ const BarraLateral = ({mostrarFiltros}: Props) => {
   
       </div>
     </S.Aside>
+    </>
 )
 }
 

@@ -15,12 +15,21 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 224px  auto;
 
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
 `
 export const MainContainer = styled.main`
     padding: 0 40px;
     height: 100vh;
     overflow-y: scroll;
     background-color: #b7b7b7ff;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const Titulo2 = styled.h2`
@@ -30,6 +39,7 @@ export const Titulo2 = styled.h2`
     
 `
 export const Titulo = styled.h1`
+    margin-top: 32px;
     text-align: center;
     font-size: 30px;
     background-color: #3c6382;
@@ -37,7 +47,7 @@ export const Titulo = styled.h1`
 `
 export const Campo = styled.input`
     width: 100%;
-    margin: 8px 0;
+    margin-top: 32px;
     padding: 8px;
     background-color: #ffff;
     border-radius: 8px;
