@@ -16,4 +16,12 @@ export const Circulo = styled(Link)`
     bottom: 40px;
     right: 40px;
     font-size: 40px;
+        text-decoration: none;
+        line-height: 1;
+
+        &:hover,
+        &:focus,
+        &:visited {
+            text-decoration: none;
+        }
 `
